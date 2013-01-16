@@ -1,0 +1,6 @@
+# packages not on pypi
+-e git+git://github.com/django/django.git@stable/1.5.x#egg=django
+
+# django packages
+django-debug-toolbar==0.9.4
+django-jenkins==0.14.0
