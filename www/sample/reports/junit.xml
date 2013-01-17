@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites><testsuite name="apps.search.test_cases.test_views.TestSimple"><testcase classname="apps.search.test_cases.test_views.TestSimple" name="test_basic" time="0.017908"></testcase></testsuite></testsuites>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 from django.conf.global_settings import *  # pylint: disable=W0614,W0401
-from django.core.urlresolvers import reverse_lazy
+
 
 # removes settings directory from the path
 SITE_ROOT = os.path.split(os.path.dirname(__file__))[0]
@@ -93,26 +93,23 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.comments',
     'django_jenkins',
-    'sample.apps.search',
+    'apps.search',
 )
 
 # List of django apps to jenkins use
 PROJECT_APPS = (
-    'sample.apps.search'
+    'apps.search',
 )
 
 # List of tasks to jenkins run
 JENKINS_TASKS = (
-    'django_jenkins.tasks.with_coverage',
     'django_jenkins.tasks.run_pyflakes',
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_sloccount',
-    'django_jenkins.tasks.dir_tests',
+    #'django_jenkins.tasks.dir_tests',
     #'django_jenkins.tasks.run_jshint',
     'django_jenkins.tasks.django_tests',
 )
-
-AUTH_USER_MODEL = 'authenticate.CustomUser'
 
 # Default languages for this site
 ugettext = lambda s: s
@@ -122,3 +119,16 @@ LANGUAGES = (
     ('en', ugettext('English')),
     ('pt-br', ugettext('Brazilian Portuguese')),
 )
+
+SECRET_KEY = '123123'
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'sample.db',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}

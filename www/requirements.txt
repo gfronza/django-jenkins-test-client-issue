@@ -4,3 +4,12 @@
 # django packages
 django-debug-toolbar==0.9.4
 django-jenkins==0.14.0
+
+# git version required to work with django 1.4
+-e git://github.com/alex/django-fixture-generator.git@master#egg=django-fixture-generator
+
+# python packages
+pyflakes==0.5.0
+pep8==1.4
+fabric==1.5.1
+pyyaml==3.10
